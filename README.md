@@ -6,4 +6,5 @@ consul
 ### 2.[启动参数介绍](https://github.com/jhq0113/consul/blob/master/2.启动参数.md)
 ### 3.[HTTP-API](https://github.com/jhq0113/consul/blob/master/3.HTTP-API.md)
 ### 4.[Watches](https://github.com/jhq0113/consul/blob/master/4.Watches.md)
+### 5.[Services](https://github.com/jhq0113/consul/blob/master/5.Services.md)
 

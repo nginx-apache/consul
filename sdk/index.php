@@ -13,7 +13,7 @@ require __DIR__.'/Autoload.php';
 
 \consul\Autoload::run();
 
-$url = 'http://10.20.76.58:3500';
+$url = 'http://10.20.76.58:1500';
 
 /**
  * 注册服务
@@ -137,6 +137,16 @@ $response['deregister'] = HttpHelper::request([
     ],
     'method'  => 'put'
 ])->body;*/
+
+$response['deregister'] = HttpHelper::request([
+    'url'       => $url.'/v1/catalog/deregister',
+    'params'    => [
+        'Datacenter'    =>  'develop',
+        'Node'          =>  'local',
+        'ServiceID'     =>  '10.20.76.58:6380',
+    ],
+    'method'  => 'put'
+])->body;
 
 
 /**

@@ -9,4 +9,5 @@ consul
 ### 5.[Services](https://github.com/jhq0113/consul/blob/master/5.Services.md)
 ### 6.[Checks](https://github.com/jhq0113/consul/blob/master/6.Checks.md)
 ### 7.[Watches](https://github.com/jhq0113/consul/blob/master/7.Watches.md)
+### 8.[Catalog](https://github.com/jhq0113/consul/blob/master/8.Catalog.md)
 

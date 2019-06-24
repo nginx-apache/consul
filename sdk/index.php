@@ -32,17 +32,17 @@ $response['register'][] = HttpHelper::request([
             'key'       => 'value'
         ],
         'Service'           => [
-            'Id'        => '10.20.76.58:6379',
+            'Id'        => '10.20.76.58:6380',
             'Service'   => 'redis',
             'tags'      => ['develop'],
             'Address'   => '10.20.76.58',
-            'Port'      => 6379,
+            'Port'      => 6380,
             'Meta'      =>[
                 'auth'  => 'jhq0113'
             ],
         ],
         'Check' => [
-            'Node'          => 'redis',
+            'Node'          => 'local',
             'CheckID'       => 'service:redis:10.20.76.58:6379',
             'Name'          => 'redis health check',
             'Notes'         => 'redis health check',
@@ -90,7 +90,7 @@ $response['register'][] = HttpHelper::request([
             ],
         ],
         'Check' => [
-            'Node'          => 'redis',
+            'Node'          => 'test1',
             'CheckID'       => 'service:redis:10.20.70.215:6379',
             'Name'          => 'redis health check',
             'Notes'         => 'redis health check',
@@ -137,6 +137,7 @@ $response['deregister'] = HttpHelper::request([
     ],
     'method'  => 'put'
 ])->body;*/
+
 
 /**
  * 发现服务

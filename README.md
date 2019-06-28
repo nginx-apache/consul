@@ -11,6 +11,8 @@ consul
 ### [7.Watches](https://github.com/jhq0113/consul/blob/master/7.Watches.md)
 ### [8.Catalog](https://github.com/jhq0113/consul/blob/master/8.Catalog.md)
 ### [9.Forwarding-DNS](https://github.com/jhq0113/consul/blob/master/9.Forwarding-DNS.md)
+### [10.Connect](https://github.com/jhq0113/consul/blob/master/10.Connect.md)
+### [11.Acl](https://github.com/jhq0113/consul/blob/master/11.Acl.md)
 
 ## Consul vs. ZooKeeper, doozerd, etcd
 

@@ -44,16 +44,19 @@ class HttpHelper
      * @param string $url
      * @param array  $params
      * @param string $method
+     * @param array  $headers
      * @return Response
      * Author: Jiang Haiqiang
      * Email : jhq0113@163.com
      * Date: 2019/6/21
      * Time: 17:33
      */
-    public static function http($url,$params=[],$method='get')
+    public static function http($url,$params=[],$method='get',array $headers=[])
     {
         $client = new Client();
         $client->setUrl($url);
+        $client->setHeaders($headers);
+        
         return call_user_func([$client,$method],$params);
     }
     
@@ -67,6 +70,6 @@ class HttpHelper
      */
     public static function request($params=[])
     {
-        return static::http($params['url'],$params['params']?:[],$params['method']?:'get');
+        return static::http($params['url'],$params['params']?:[],$params['method']?:'get',$params['headers'] ?:[]);
     }
 }

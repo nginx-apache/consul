@@ -104,6 +104,7 @@ class Client
         $this->_handler = curl_init();
 
         $this->setOpt(CURLOPT_RETURNTRANSFER,1);
+        
     }
 
     /**
@@ -147,7 +148,9 @@ class Client
      */
     public function setHeaders($headers=[])
     {
-        curl_setopt($this->_handler,CURLOPT_HTTPHEADER,$headers);
+        if(!empty($headers)) {
+            curl_setopt($this->_handler,CURLOPT_HTTPHEADER,$headers);
+        }
         return $this;
     }
 

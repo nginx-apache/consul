@@ -13,12 +13,18 @@ require __DIR__.'/Autoload.php';
 
 \consul\Autoload::run();
 
-$url = 'http://10.20.76.58:1500';
+$url = 'http://10.20.76.58:8500';
+
+$commonHeader = [
+    //bootstrap Token
+    'X-Consul-Token:d5cadb0e-8c77-28a7-9c26-7458d6d47b07'
+];
 
 /**
  * 注册服务
  */
 $response['register'][] = HttpHelper::request([
+    'headers'   => $commonHeader,
     'url'       => $url.'/v1/catalog/register',
     'params'    => [
         'Datacenter'        =>  'develop',
@@ -67,6 +73,7 @@ $response['register'][] = HttpHelper::request([
  * 注册服务
  */
 $response['register'][] = HttpHelper::request([
+    'headers'   => $commonHeader,
     'url'       => $url.'/v1/catalog/register',
     'params'    => [
         'Datacenter'        =>  'develop',
@@ -112,6 +119,7 @@ $response['register'][] = HttpHelper::request([
  * 发现服务
  */
 /*$response['discover']['before'] = HttpHelper::request([
+    'headers'   => $commonHeader,
     'url' => $url.'/v1/catalog/service/redis'
 ])->body;*/
 
@@ -119,6 +127,7 @@ $response['register'][] = HttpHelper::request([
  * 摘除服务
  */
 /*$response['deregister'] = HttpHelper::request([
+    'headers'   => $commonHeader,
     'url'       => $url.'/v1/catalog/deregister',
     'params'    => [
         'Datacenter'    =>  'develop',
@@ -129,6 +138,7 @@ $response['register'][] = HttpHelper::request([
 ])->body;
 
 $response['deregister'] = HttpHelper::request([
+    'headers'   => $commonHeader,
     'url'       => $url.'/v1/catalog/deregister',
     'params'    => [
         'Datacenter'    =>  'develop',
@@ -139,6 +149,7 @@ $response['deregister'] = HttpHelper::request([
 ])->body;*/
 
 $response['deregister'] = HttpHelper::request([
+    'headers'   => $commonHeader,
     'url'       => $url.'/v1/catalog/deregister',
     'params'    => [
         'Datacenter'    =>  'develop',
@@ -153,7 +164,8 @@ $response['deregister'] = HttpHelper::request([
  * 发现服务
  */
 $response['discover']['after'] = HttpHelper::request([
-    'url' => $url.'/v1/catalog/service/redis'
+    'headers'   => $commonHeader,
+    'url'       => $url.'/v1/catalog/service/redis'
 ])->body;
 
 echo $response['discover']['after'];

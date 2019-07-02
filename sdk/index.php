@@ -168,4 +168,10 @@ $response['discover']['after'] = HttpHelper::request([
     'url'       => $url.'/v1/catalog/service/redis'
 ])->body;
 
-echo $response['discover']['after'];
+/**
+ * 获取九商目录下所有内容
+ */
+$response['discover']['kv'] = HttpHelper::request([
+    'headers'   => $commonHeader,
+    'url'       => $url.'/v1/kv/jiushang/?recurse&dc=develop&separator=/'
+]);

@@ -13,7 +13,7 @@ require __DIR__.'/Autoload.php';
 
 \consul\Autoload::run();
 
-$url = 'http://10.20.76.58:8500';
+$url = 'http://10.20.76.58:3500';
 
 $commonHeader = [
     //bootstrap Token
@@ -173,5 +173,7 @@ $response['discover']['after'] = HttpHelper::request([
  */
 $response['discover']['kv'] = HttpHelper::request([
     'headers'   => $commonHeader,
-    'url'       => $url.'/v1/kv/jiushang/?recurse&dc=develop&separator=/'
+    'url'       => $url.'/v1/kv/jiushang?recurse=&dc=develop'
 ]);
+
+var_dump($response);
